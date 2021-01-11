@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Calc;
 use Yii;
 use app\models\Projetos;
 use app\models\ProjetosSearch;
@@ -123,5 +124,13 @@ class ProjetosController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    
+    public function actionCalc(){
+        $model = new Projetos();
+        //return $this->redirect(['index']);
+        return $this->render('calc', [
+            'model' => $model,
+        ]);
     }
 }

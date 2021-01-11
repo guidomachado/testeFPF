@@ -11,7 +11,7 @@ $this->title = 'Teste FPF';
 
         <p class="lead">Plataforma para o gerenciamento de projetos da empresa.</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Gerenciar Projetos</a></p>
+        <p><a class="btn btn-lg btn-success" href="http://localhost:8081/teste_fpf/basic/web/index.php?r=projetos">Gerenciar Projetos</a></p>
     </div>
 
     <div class="body-content">

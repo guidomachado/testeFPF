@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\ProjetosSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Projetos';
+$this->title = 'Gerenciador de Projetos';        //título da pagina de gerenciamento de projetos
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="projetos-index">
@@ -15,7 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Projetos', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar Novo Projeto', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
+    <p>
+        <?= Html::a('calcular', ['calc'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -32,6 +36,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'Data_de_Termino',
             'Valor_do_Projeto',
             'Risco',
+            [
+                'class' => 'yii\grid\CheckboxColumn',
+                //Html::submitButton('Env', ['class' => 'btn btn-primary']),
+            ],
             //'Participantes:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],

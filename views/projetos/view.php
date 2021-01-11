@@ -24,6 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('Simular Investimento', ['calc', 'id' => $model->Id], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <?= DetailView::widget([
@@ -36,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'Valor_do_Projeto',
             'Risco',
             'Participantes:ntext',
+            //'Calcular',
         ],
     ]) ?>
 
