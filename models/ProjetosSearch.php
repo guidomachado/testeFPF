@@ -19,7 +19,7 @@ class ProjetosSearch extends Projetos
         return [
             [['Id', 'Risco'], 'integer'],
             [['Nome_do_Projeto', 'Data_de_Inicio', 'Data_de_Termino', 'Participantes'], 'safe'],
-            [['Valor_do_Projeto'], 'number'],
+            [['Valor_do_Projeto', 'Valor_do_Investimento', 'Retorno_financeiro'], 'number'],
         ];
     }
 
@@ -64,6 +64,8 @@ class ProjetosSearch extends Projetos
             'Data_de_Termino' => $this->Data_de_Termino,
             'Valor_do_Projeto' => $this->Valor_do_Projeto,
             'Risco' => $this->Risco,
+            'Valor_do_Investimento' => $this->Valor_do_Investimento,
+            'Retorno_financeiro' => $this->Retorno_financeiro,
         ]);
 
         $query->andFilterWhere(['like', 'Nome_do_Projeto', $this->Nome_do_Projeto])

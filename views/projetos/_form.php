@@ -24,6 +24,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'Participantes')->textarea(['rows' => 6]) ?>
 
+    <?/*Aqui foi retirado os campos de Valor_de_Investimento e Retorno para serem acessíveis aos usuários*/?>
+    
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

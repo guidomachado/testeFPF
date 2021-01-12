@@ -14,6 +14,8 @@ use Yii;
  * @property float $Valor_do_Projeto
  * @property int $Risco
  * @property string $Participantes
+ * @property float $Valor_do_Investimento Input do investimento do cliente
+ * @property float $Retorno_financeiro Mostrar o retorno para o cliente
  */
 class Projetos extends \yii\db\ActiveRecord
 {
@@ -31,10 +33,10 @@ class Projetos extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Nome_do_Projeto', 'Data_de_Inicio', 'Data_de_Termino', 'Valor_do_Projeto', 'Risco', 'Participantes'], 'required'],
+            [['Nome_do_Projeto', 'Data_de_Inicio', 'Data_de_Termino', 'Valor_do_Projeto', 'Risco', 'Participantes'],'required'],
             [['Nome_do_Projeto', 'Participantes'], 'string'],
             [['Data_de_Inicio', 'Data_de_Termino'], 'safe'],
-            [['Valor_do_Projeto'], 'number'],
+            [['Valor_do_Projeto', 'Valor_do_Investimento', 'Retorno_financeiro'], 'number'],
             [['Risco'], 'integer'],
         ];
     }
@@ -52,6 +54,8 @@ class Projetos extends \yii\db\ActiveRecord
             'Valor_do_Projeto' => 'Valor Do Projeto',
             'Risco' => 'Risco',
             'Participantes' => 'Participantes',
+            'Valor_do_Investimento' => 'Valor Do Investimento',
+            'Retorno_financeiro' => 'Retorno Financeiro',
         ];
     }
 }

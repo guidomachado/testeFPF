@@ -37,7 +37,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'Valor_do_Projeto',
             'Risco',
             'Participantes:ntext',
-            //'Calcular',
+            'Valor_do_Investimento',
+            'Retorno_financeiro',
         ],
     ]) ?>
 

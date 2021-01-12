@@ -29,6 +29,10 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'Participantes') ?>
 
+    <?php // echo $form->field($model, 'Valor_do_Investimento') ?>
+
+    <?php // echo $form->field($model, 'Retorno_financeiro') ?>
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>

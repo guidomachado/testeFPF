@@ -126,9 +126,18 @@ class ProjetosController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
     
-    public function actionCalc(){
-        $model = new Projetos();
+    public function actionCalc($id){
+        //$model = new Projetos();
+        $model = $this->findModel($id);
+
+        //if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        //    return $this->redirect(['view', 'id' => $model->Id]);
+        //}
+
+        //$this->findModel($id)->Projetos();
         //return $this->redirect(['index']);
+        $projetos = Projetos::findOne(6);
+        echo $projetos->Valor_do_Investimento;
         return $this->render('calc', [
             'model' => $model,
         ]);
