@@ -18,10 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Criar Novo Projeto', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <p>
-        <?= Html::a('calcular', ['calc'], ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([

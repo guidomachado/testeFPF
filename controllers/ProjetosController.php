@@ -9,6 +9,7 @@ use app\models\ProjetosSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\SimularModel;
 
 /**
  * ProjetosController implements the CRUD actions for Projetos model.
@@ -126,19 +127,35 @@ class ProjetosController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
     
-    public function actionCalc($id){
-        //$model = new Projetos();
+    
+    public function actionSimular($id){
+
+        $model1 = $this->findModel($id);
+        $simularModel = new SimularModel;
+        $post = Yii::$app->request->post();
+        if($simularModel->load($post) && $simularModel->validate()) {
+            return $this->render('confirmar_simu', [
+                'model' => $simularModel,
+                'model1' => $model1,
+            ]);
+        }
+        else{
+            return $this->render('simular', [
+                'model' => $simularModel,
+                'model1' => $model1,
+            ]);
+        } 
+
+    }
+    public function actionConfirmar_simu($id)
+    {
         $model = $this->findModel($id);
+        //$this->findModel($id)->save();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->Id]);
+        }
 
-        //if ($model->load(Yii::$app->request->post()) && $model->save()) {
-        //    return $this->redirect(['view', 'id' => $model->Id]);
-        //}
-
-        //$this->findModel($id)->Projetos();
-        //return $this->redirect(['index']);
-        $projetos = Projetos::findOne(6);
-        echo $projetos->Valor_do_Investimento;
-        return $this->render('calc', [
+        return $this->render('confirmar_simu', [
             'model' => $model,
         ]);
     }

@@ -13,6 +13,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         Plataforma de gerenciamento do grupo Lorem IpsumInc.
     </p>
-
-    <code><?= __FILE__ ?></code>
+    <p>
+    Desenvolvedor: Guido Soprano Machado.
+    </p>
+    <p>
+    Contato: 92 982019419.
+    </p>
+       
 </div>
