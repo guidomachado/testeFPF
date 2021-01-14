@@ -10,6 +10,7 @@
 7. O usuário pode colocar quanto quer investir nesse processo e clicar no botão que cálcula o retorno.<br>
 8. O usuário pode viasualizar seu retorno e se desejar clicar para salvar seu investimento do projeto atual.<br>
 9. Por fim, os dados seram preenchidos e podem ser visualizados.<br>
+10. Infelizmente deu um problema no formato da data e não conseguir modificar em tempo habil. o formato está em (YYYY-MM-DD).
 </p>
 <p> Dúvidas 982019419 </p>
 
