@@ -127,7 +127,12 @@ class ProjetosController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
     
-    
+    /* O controlador actionSimular é responsável por receber o id do projeto atual chamar o *formulário que coleta o valor de investimento do cliente e passa esses dados pelo *método POST para o usuário confirmar sua visualizar seu investimento. 
+    * 
+    * @param integer $id
+    * @return mixed : Retorno1: Quando for carregado os dados e passados pelo POST.
+    *                 Retorno2: Continua chamando a view do formulário.
+    */
     public function actionSimular($id){
 
         $model1 = $this->findModel($id);
@@ -147,6 +152,12 @@ class ProjetosController extends Controller
         } 
 
     }
+    /* O controlador actionConfirmar_simu é responsável por receber o id do projeto atual e *chamar o formulário principal com os dados de investimento e retorno do cliente *atualizados, além do usuário confirmar se quer enviar seu investimento para o projeto. 
+    * 
+    * @param integer $id
+    * @return mixed : Retorno1: Quando for carregado os dados e passados pelo POST.
+    *                 Retorno2: Continua chamando a view do formulário atual.
+    */
     public function actionConfirmar_simu($id)
     {
         $model = $this->findModel($id);

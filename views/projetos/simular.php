@@ -21,15 +21,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php $form = ActiveForm::begin(); ?>
 
-
 <?= $form->field($model,'investimento') ?>
-<?php// echo "$guardar";?>
-
 
 <div class="form-group">
 
 
-<?= Html::submitButton('Simular Investimento',['class'=>'btn btn-pri'])?>
+<?= Html::submitButton('Cálculo de Retorno do Investimento',['class'=>'btn btn-warning'])?>
 </div>
 <?php ActiveForm::end(); ?>
 

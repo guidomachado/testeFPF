@@ -9,12 +9,8 @@ use yii\helpers\Html;
 <?php
 $valor_ins = $model->investimento;
 $projetos = Projetos::findOne($model1->Id);
-//$valor_ins=$projetos->Valor_do_Investimento;
-//$projetos->Valor_do_Investimento=$valor_ins;$projetos->save();
+
 $valor_de_risco=$projetos->Risco;
-
-//$valor_id = $model->id;
-
 
 if ($valor_de_risco == 0) //Risco baixo
 {
@@ -32,21 +28,22 @@ $projetos->Valor_do_Investimento=$valor_ins;
 $projetos->Retorno_financeiro = $valor_de_retorno;
 $projetos->save();
 ?>
-<p>Confirmando as informações da simulação</p>
-
-<div class="form-group">
+<h2>Confirmando as informações da simulação</h2>
 
 
-<?= Html::a('Salvar Simulação', ['view', 'id' => $model1->Id], [
-        'class' => 'btn btn-danger',
-        'data' => [
-            'confirm' => 'deseja realmente salvar sua simulação no projeto??',
-            'method' => 'post',
-        ],
-    ]) ?>
-</div>
 
 <ul>
 <li><label>Valor de Investimento:</label><?=$model->investimento?></li>
 <li><label>Valor de retorno:</label><?=" ".$valor_de_retorno?></li>
 </ul>
+<div class="form-group">
+
+
+<?= Html::a('Salvar Simulação no projeto', ['view', 'id' => $model1->Id], [
+        'class' => 'btn btn-danger',
+        'data' => [
+            'confirm' => 'Deseja realmente salvar sua simulação no projeto??',
+            'method' => 'post',
+        ],
+    ]) ?>
+</div>

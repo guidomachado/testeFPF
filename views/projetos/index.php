@@ -18,8 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Criar Novo Projeto', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -32,12 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'Data_de_Termino',
             'Valor_do_Projeto',
             'Risco',
-            [
-                'class' => 'yii\grid\CheckboxColumn',
-                //Html::submitButton('Env', ['class' => 'btn btn-primary']),
-            ],
             //'Participantes:ntext',
-
+            //'Valor_do_Investimento',
+            //'Retorno_financeiro',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
